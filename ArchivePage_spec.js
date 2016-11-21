@@ -9,7 +9,7 @@ describe('Archive function', function () {
     let notesPage = new NotesPage()
 
     
-    it('should be created when title and body provided', function () {
+    xit('should be created when title and body provided', function () {
         browser.get('http://www.hiteshbalar.com/preserver/notes')
         browser.sleep(2000)
         notesPage.createNote('Test', 'Test')
@@ -19,7 +19,7 @@ describe('Archive function', function () {
     })
    
 
-    it('should be archive note', function () {
+    xit('should be archive note', function () {
         notesPage.createArchive()
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(0,
@@ -31,7 +31,7 @@ describe('Archive function', function () {
        
     })
 
-    it('should be unarchive note', function () {
+    xit('should be unarchive note', function () {
         archivePage.createUnarchive()
         browser.sleep(5000)
         expect(archivePage.getNotes().count()).toBe(0,

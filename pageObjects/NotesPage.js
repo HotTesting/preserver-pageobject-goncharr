@@ -5,7 +5,7 @@ class NotesPage {
         this.newNoteBodyField = $('.note-editor textarea')
         this.newNoteTitleField = $('.note-editor input[placeholder="Title"]')
         this.pushArchiveNotes = $('.btn.btn-link[title="Archive"]')
-        this.deleteNotes = $('.btn-raised[title="Delete"]')
+        this.pushDeleteNote = $('.btn-raised[title="Delete"]')
     }
 
     //Создаст заметку на странице
@@ -21,8 +21,8 @@ class NotesPage {
         this.pushArchiveNotes.click()
     }
 
-    deleteNotes(){
-        this.deleteNotes.click()
+    deleteNote(){
+        this.pushDeleteNote.click()
     }
 
     //Получим коллекцию всех заметок которые есть на этой странице
