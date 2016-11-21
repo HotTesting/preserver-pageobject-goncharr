@@ -1,20 +1,14 @@
-/*//Импорт пейдж обджекта из другого файла
+//Импорт пейдж обджекта из другого файла
 let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
-
-
 //Просто наш базовый URL для работы
 let URL = 'http://www.hiteshbalar.com/preserver/notes'
-
 describe('Preserver tests', function () {
     let notesPage = new NotesPage()
-
     beforeEach(function () {
       browser.get(URL)
       browser.sleep(5000)
-
       //browser.params.users[1]
     })
-
     //This function will be executed after each IT block in this DESCRIBE block
     afterEach(function () {
       // Wiping cookie files ONLY for current domain
@@ -39,35 +33,28 @@ describe('Preserver tests', function () {
             // indexedDB storage is disabled for data URLs
         })
     })
-
-    it('should be created when title and body provided', function () {
+    xit('should be created when title and body provided', function () {
         
         notesPage.createNote('Test', 'Test')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
-
     xit('should be created when only title provided', function () {
         
         notesPage.createNote('Test', '')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
-
     xit('should be created when only body provided', function () {
-
         notesPage.createNote('', 'Test')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
-
     xit('should NOT be created when nothing provided', function () {
-
         notesPage.createNote('', '')
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
     })
     
     
-
-})  */
+})
