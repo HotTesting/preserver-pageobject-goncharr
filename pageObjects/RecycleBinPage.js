@@ -14,12 +14,12 @@ class RecycleBinPage {
         
     }
 
-    pushDeleteForever() {
+    linkDelete() {
         this.deleteForeverNote.click()
         
     }
 
-    pushDeleteButton() {
+    confirmDeleteButton() {
         this.buttonToDelete.click()
         
     }

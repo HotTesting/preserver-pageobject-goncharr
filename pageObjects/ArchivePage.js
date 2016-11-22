@@ -8,9 +8,9 @@ class ArchivePage {
         this.deleteButtonNotes = $('.btn-raised[title="Delete"]')
     }
 
-    createUnarchive() {
+    unarchive() {
         this.pushToUnarchive.click()
-        //findElement(by.css('.p>strong'))       
+              
     }
 
     

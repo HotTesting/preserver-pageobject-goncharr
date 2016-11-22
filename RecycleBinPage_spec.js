@@ -12,7 +12,7 @@ describe('Recycle bin function', function () {
 
     
     it('should be created when title and body provided', function () {
-        browser.get('http://www.hiteshbalar.com/preserver/notes')
+        browser.get(URL)
         browser.sleep(2000)
         notesPage.createNote('Test', 'Test')
         browser.sleep(2000)
@@ -22,7 +22,9 @@ describe('Recycle bin function', function () {
    
 
     it('should be delete note', function () {
-        notesPage.deleteNote()
+        //browser.get(URL)
+        browser.sleep(2000)
+        notesPage.deleteNoteButton()
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
@@ -38,7 +40,7 @@ describe('Recycle bin function', function () {
         browser.sleep(5000)
         expect(recycleBinPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
-        browser.get('http://www.hiteshbalar.com/preserver/')
+        browser.get(URL)
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after restored')
@@ -47,11 +49,11 @@ describe('Recycle bin function', function () {
 
 
     xit('should be delete note', function () {
-        notesPage.deleteNote()
+        notesPage.deleteNoteButton()
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
-        browser.get('http://www.hiteshbalar.com/preserver/recycle-bin')
+        browser.get(`${URL}/recycle-bin`)
         browser.sleep(5000)
         expect(recycleBinPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after deleted')
@@ -61,14 +63,14 @@ describe('Recycle bin function', function () {
 
 
     it('should be delete forever', function () {
-        browser.get('http://www.hiteshbalar.com/preserver/recycle-bin')
-        recycleBinPage.pushDeleteForever()
+        browser.get(`${URL}/recycle-bin`)
+        recycleBinPage.linkDelete()
         browser.sleep(2000)
-        recycleBinPage.pushDeleteButton()
+        recycleBinPage.confirmDeleteButton()
         browser.sleep(2000)
         expect(recycleBinPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
-        browser.get('http://www.hiteshbalar.com/preserver/')
+        browser.get(URL)
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 1 after restored')

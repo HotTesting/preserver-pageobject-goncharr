@@ -18,11 +18,11 @@ class NotesPage {
         element(by.buttonText('Save')).click()
     }
 
-    createArchive() {
+    archive() {
         this.pushArchiveNotes.click()
     }
 
-    deleteNote(){
+    deleteNoteButton(){
         this.pushDeleteNote.click()
     }
 
