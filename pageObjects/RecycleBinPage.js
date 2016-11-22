@@ -1,3 +1,4 @@
+"use strict";
 
 class RecycleBinPage {
 
@@ -5,7 +6,7 @@ class RecycleBinPage {
         
         this.restoreNote = $('.btn-raised[title="Restore"]')
         this.deleteForeverNote = $('.btn-raised[title="Delete forever"]')
-        this.selectDeleteButton = $('.grid-container [title~=Delete]')
+        this.buttonToDelete = $('.grid-container [title~=Delete]')
     }
 
     pushRestore() {
@@ -18,8 +19,8 @@ class RecycleBinPage {
         
     }
 
-    selectDeleteButton() {
-        this.selectDeleteButton.click()
+    pushDeleteButton() {
+        this.buttonToDelete.click()
         
     }
 

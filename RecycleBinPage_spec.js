@@ -1,3 +1,5 @@
+"use strict";
+
 let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
 let RecycleBinPage = require('./pageObjects/RecycleBinPage.js').RecycleBinPage
 
@@ -31,7 +33,7 @@ describe('Recycle bin function', function () {
        
     })
 
-    it('should be restore note', function () {
+    xit('should be restore note', function () {
         recycleBinPage.pushRestore()
         browser.sleep(5000)
         expect(recycleBinPage.getNotes().count()).toBe(0,
@@ -44,7 +46,7 @@ describe('Recycle bin function', function () {
     })
 
 
-    it('should be delete note', function () {
+    xit('should be delete note', function () {
         notesPage.deleteNote()
         browser.sleep(5000)
         expect(notesPage.getNotes().count()).toBe(0,
@@ -59,9 +61,11 @@ describe('Recycle bin function', function () {
 
 
     it('should be delete forever', function () {
-        recycleBinPage.selectDeleteButton()
+        browser.get('http://www.hiteshbalar.com/preserver/recycle-bin')
+        recycleBinPage.pushDeleteForever()
         browser.sleep(2000)
         recycleBinPage.pushDeleteButton()
+        browser.sleep(2000)
         expect(recycleBinPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
         browser.get('http://www.hiteshbalar.com/preserver/')

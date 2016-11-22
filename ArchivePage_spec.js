@@ -1,3 +1,5 @@
+"use strict";
+
 let ArchivePage = require('./pageObjects/ArchivePage.js').ArchivePage
 let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
 

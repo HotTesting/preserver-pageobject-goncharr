@@ -1,3 +1,5 @@
+"use strict";
+
 //Импорт пейдж обджекта из другого файла
 let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
 //Просто наш базовый URL для работы
