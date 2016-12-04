@@ -9,6 +9,7 @@ let URL = 'http://www.hiteshbalar.com/preserver/'
 describe('Archive function', function () {
     let archivePage = new ArchivePage()
     let notesPage = new NotesPage()
+    browser()
 
     
     xit('should be created when title and body provided', function () {

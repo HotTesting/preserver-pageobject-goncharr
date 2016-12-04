@@ -36,23 +36,25 @@ describe('Preserver tests', function () {
         })
     })
     xit('should be created when title and body provided', function () {
-        
+        browser.get(URL)
         notesPage.createNote('Test', 'Test')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
     xit('should be created when only title provided', function () {
-        
+        browser.get(URL)
         notesPage.createNote('Test', '')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
     xit('should be created when only body provided', function () {
+        browser.get(URL)
         notesPage.createNote('', 'Test')
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
     xit('should NOT be created when nothing provided', function () {
+        browser.get(URL)
         notesPage.createNote('', '')
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 0')

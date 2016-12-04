@@ -4,7 +4,7 @@ let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
 let RecycleBinPage = require('./pageObjects/RecycleBinPage.js').RecycleBinPage
 
 
-let URL = 'http://www.hiteshbalar.com/preserver/notes'
+let URL = 'http://www.hiteshbalar.com/preserver'
 
 describe('Recycle bin function', function () {
     let notesPage = new NotesPage()
@@ -62,8 +62,9 @@ describe('Recycle bin function', function () {
 
 
 
-    it('should be delete forever', function () {
+    fit('should be delete forever', function () {
         browser.get(`${URL}/recycle-bin`)
+        browser.sleep(5000)
         recycleBinPage.linkDelete()
         browser.sleep(2000)
         recycleBinPage.confirmDeleteButton()

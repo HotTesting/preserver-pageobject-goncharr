@@ -1,4 +1,5 @@
 "use strict";
+let EC = protractor.ExpectedConditions
 
 class NotesPage {
 
@@ -9,13 +10,15 @@ class NotesPage {
         this.pushDeleteNote = $('.btn-raised[title="Delete"]')
     }
 
-    //Создаст заметку на странице
+    //Create a note on the page
     createNote(title, body) {
         this.newNoteBodyField.click()
         this.newNoteBodyField.sendKeys(body)
         this.newNoteTitleField.click()
         this.newNoteTitleField.sendKeys(title)
         element(by.buttonText('Save')).click()
+        browser.wait(EC.presenceOf(this.noteFirst), browser.params.customTimeout,
+        'Success notification should be visible after note creation')
     }
 
     archive() {
