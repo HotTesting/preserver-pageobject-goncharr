@@ -10,15 +10,17 @@ class NotesPage {
         this.pushArchiveNotes = $('.btn.btn-link[title="Archive"]')
         this.pushDeleteNote = $('.btn-raised[title="Delete"]')
     }
-
-    //Create a note on the page
-    createNote(title, body) {
+    baseNote(title = '', body = '') {
         this.newNoteBodyField.click()
         this.newNoteBodyField.sendKeys(body)
         this.newNoteTitleField.click()
         this.newNoteTitleField.sendKeys(title)
         element(by.buttonText('Save')).click()
-        browser.wait(EC.visibilityOf( $$('.grid-container .grid-item').first()), 5000)
+    }
+    //Create a note on the page
+    createNote(title = '', body = '') {
+        this.baseNote(title, body)
+        browser.wait(EC.elementToBeClickable((this.noteFirst), 5000))
     }
 
     archive() {

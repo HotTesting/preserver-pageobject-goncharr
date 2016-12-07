@@ -25,7 +25,7 @@ describe('Preserver tests', function () {
             'Notes count should be 1 after created')
     })
     it('should NOT be created when nothing provided', function () {
-        notesPage.createNote('', '')
+        notesPage.baseNote('', '')
         expect(notesPage.getNotes().count()).toBe(0,
             'Notes count should be 0')
     })
