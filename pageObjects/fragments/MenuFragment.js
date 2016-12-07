@@ -9,3 +9,18 @@ class MenuFragment {
         this.clickRecycleBinLink = this.navBarElem.$('.dropdown-menu a[href*='/preserver/recycle-bin']')
         this.clickAboutLink = this.navBarElem.$('.dropdown-menu a[href*='/preserver/about']')
     }
+
+    clickMyNotesLink() {
+    	this.clickMyNotesLink.click()
+    }
+    clickArchiveNotesLink () {
+    	this.clickArchiveNotesLink.click()
+    }
+    clickRecycleBinLink() {
+    	this.clickRecycleBinLink.click()
+    }
+    clickAboutLink() {
+    	this.clickAboutLink.click()
+    }
+
+module.exports.MenuFragment = MenuFragment    

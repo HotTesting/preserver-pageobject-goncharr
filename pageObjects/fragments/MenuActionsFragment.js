@@ -38,4 +38,4 @@ class MenuActionsFragment {
          	'Open menu button should be visible after page open')
     }
 
-
+module.exports.MenuActionsFragment = MenuActionsFragment

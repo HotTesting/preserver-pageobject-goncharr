@@ -1,4 +1,5 @@
 "use strict";
+let BasePage = require('./BasePage.js').BasePage
 let EC = protractor.ExpectedConditions
 
 class NotesPage {
@@ -17,15 +18,14 @@ class NotesPage {
         this.newNoteTitleField.click()
         this.newNoteTitleField.sendKeys(title)
         element(by.buttonText('Save')).click()
-        browser.wait(EC.presenceOf(this.noteFirst), browser.params.customTimeout,
-        'Success notification should be visible after note creation')
+        browser.wait(EC.visibilityOf( $$('.grid-container .grid-item').first()), 5000)
     }
 
     archive() {
         this.pushArchiveNotes.click()
     }
 
-    deleteNoteButton(){
+    deleteNoteButton() {
         this.pushDeleteNote.click()
     }
 
