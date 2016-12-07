@@ -1,12 +1,12 @@
 "use strict";
+let BasePage = require('./BasePage.js').BasePage
 
-let MenuActionsFragment = require('./pageObjects/fragments/MenuActionsFragment.js').MenuActionsFragment
 
-class BasePage {
+class AboutPage extends BasePage {
 
     constructor() {
-        super()
-        this.backToNotes = $('.a[href*="/preserver/notes"')
+    	super()
+        this.backToNotes = $('.li:first-child"')
         this.iconTwitter = $('.a[href^="https://twitter.com/Hsbalar"]')
         this.iconGithub= $('.a[href^="https://github.com/hsbalar/Preserver"]')
     }

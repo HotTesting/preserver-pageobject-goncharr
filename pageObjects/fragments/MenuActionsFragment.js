@@ -1,4 +1,5 @@
 let EC = protractor.ExpectedConditions
+let MenuFragment = require('../fragments/MenuFragment.js').MenuFragment
 
 
 class MenuActionsFragment {
@@ -10,32 +11,32 @@ class MenuActionsFragment {
     }
 
 
-    _openMenu() {
+    openMenu() {
         this.openMenuButton.click()
         browser.wait(EC.elementToBeClickable(this.menu.menuElem), 2000 ,
          	'Menu should be present on the page after open')
 
         return this.menu
     }
-    openMyNotesPage {
-    	this.openMenuButton.clickMyNotesLink()
-    	browser.wait(EC.EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
+    openMyNotesPage() {
+    	this._openMenu().clickMyNotesLink()
+    	browser.wait(EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
          	'Open menu button should be visible after page open')
     }
-    openArchiveNotesPage()() {
-    	this.openMenuButton.clickArchiveNotesLink()
-    	browser.wait(EC.EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
+    openArchiveNotesPage() {
+    	this._openMenu().clickArchiveNotesLink()
+    	browser.wait(EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
          	'Open menu button should be visible after page open')
     }
     openRecyleBinNotesPage() {
-    	this.openMenuButton.clickRecycleBinLink()
-    	browser.wait(EC.EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
+    	this._openMenu().clickRecycleBinLink()
+    	browser.wait(EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
          	'Open menu button should be visible after page open')
     }
-    openAboutPage() {
-    	this.openMenuButton.clickAboutLink()
-    	browser.wait(EC.EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
+    openAboutPage(elem) {
+    	this._openMenu().clickAboutLink()
+    	browser.wait(EC.and(EC.presenceOf(this.openMenuButton), EC.elementToBeClickable(this.openMenuButton)), 2000 ,
          	'Open menu button should be visible after page open')
     }
-
+}
 module.exports.MenuActionsFragment = MenuActionsFragment
