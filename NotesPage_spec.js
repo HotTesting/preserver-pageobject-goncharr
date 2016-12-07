@@ -15,7 +15,6 @@ describe('Preserver tests', function () {
     })
     it('should be created when only title provided', function () {
         notesPage.createNote('Test', '')
-        browser.sleep(3000)
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })

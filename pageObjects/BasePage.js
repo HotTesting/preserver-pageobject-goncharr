@@ -15,13 +15,10 @@ class BasePage {
         this.dropdownMenuAbout = $('.dropdown-menu a[href*="/preserver/about"]')
 
     }
-    
-
-        
+           
     getNotes() {
         return $$('.grid-container .grid-item')
     }
-    
 
     //Получим коллекцию всех заметок которые есть на этой странице
     gоTo(menu = this.buttonDropdownMenu) {

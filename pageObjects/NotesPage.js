@@ -2,9 +2,10 @@
 let BasePage = require('./BasePage.js').BasePage
 let EC = protractor.ExpectedConditions
 
-class NotesPage {
+class NotesPage extends BasePage {
 
     constructor() {
+        super()
         this.newNoteBodyField = $('.note-editor textarea')
         this.newNoteTitleField = $('.note-editor input[placeholder="Title"]')
         this.pushArchiveNotes = $('.btn.btn-link[title="Archive"]')
@@ -20,7 +21,7 @@ class NotesPage {
     //Create a note on the page
     createNote(title = '', body = '') {
         this.baseNote(title, body)
-        browser.wait(EC.elementToBeClickable((this.noteFirst), 5000))
+        browser.wait(EC.elementToBeClickable(this.noteFirst, 5000))
     }
 
     archive() {
@@ -32,9 +33,9 @@ class NotesPage {
     }
 
     //Получим коллекцию всех заметок которые есть на этой странице
-    getNotes() {
-        return $$('.grid-container .grid-item')
-    }
+    // getNotes() {
+    //     return $$('.grid-container .grid-item')
+    // }
 }
 
 // Экспортим объект чтобы он был доступен в других файлах
