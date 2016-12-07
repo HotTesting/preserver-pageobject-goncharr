@@ -20,12 +20,7 @@ class BasePage {
         return $$('.grid-container .grid-item')
     }
 
-    //Получим коллекцию всех заметок которые есть на этой странице
-    gоTo(menu = this.buttonDropdownMenu) {
-        this.buttonDropdownMenu.click()
-        browser.wait(EC.and(EC.presenceOf(menu), EC.visibilityOf(menu)),
-            browser.params.customTimeout, 'Menu options button should be visible after page open')
-    }
+
 }
 
 // Экспортим объект чтобы он был доступен в других файлах

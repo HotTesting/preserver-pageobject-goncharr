@@ -1,3 +1,5 @@
+
+let MenuActionsFragment = require('./pageObjects/fragments/MenuActionsFragment.js').MenuActionsFragment
 let EC = protractor.ExpectedConditions
 
 class MenuFragment {
