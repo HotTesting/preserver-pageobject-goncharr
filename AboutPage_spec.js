@@ -10,7 +10,7 @@ describe('About page tests', function () {
     let aboutPage = new AboutPage()
     let notesPage = new NotesPage()
 	
-    it('should be review Back to notes link, Twitter, GitHub icons', function () {
+    it('should be review Back to notes, Twitter, GitHub icons', function () {
         menu.openAboutPage()
         expect(aboutPage.iconTwitter.isDisplayed()).toBe(true,
 			'Icon Twitter should be displayed')
