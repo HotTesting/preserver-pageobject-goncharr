@@ -12,6 +12,7 @@ describe('About page tests', function () {
 	
     it('should be review Back to notes, Twitter, GitHub icons', function () {
         menu.openAboutPage()
+        browser.sleep(3000)
         expect(aboutPage.iconTwitter.isDisplayed()).toBe(true,
 			'Icon Twitter should be displayed')
 	})

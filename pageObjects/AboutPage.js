@@ -5,13 +5,11 @@ class AboutPage extends BasePage {
 
     constructor() {
     	super()
-        this.backToNotes = $('.li:first-child"')
-        this.linkToIconTwitter = $('.a[href^="https://twitter.com/Hsbalar"]')
-        this.linkToIconGithub= $('.a[href^="https://github.com/hsbalar/Preserver"]')
+        this.backToNotes = $('li:first-child"')
+        this.iconTwitter = $('a[href^="https://twitter.com/Hsbalar"]')
+        this.linkToIconGithub= $('a[href^="https://github.com/hsbalar/Preserver"]')
     }
-    iconTwitter() {
-        this.linkToIconTwitter()
-    }
+
 }
 
 // Экспортим объект чтобы он был доступен в других файлах
