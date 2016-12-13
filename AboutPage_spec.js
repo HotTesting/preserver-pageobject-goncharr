@@ -2,7 +2,7 @@
 let MenuActionsFragment = require('./pageObjects/fragments/MenuActionsFragment.js').MenuActionsFragment
 let NotesPage = require('./pageObjects/NotesPage.js').NotesPage
 let AboutPage = require('./pageObjects/AboutPage.js').AboutPage
-
+let EC = protractor.ExpectedConditions
 
 
 describe('About page tests', function () {
@@ -12,8 +12,11 @@ describe('About page tests', function () {
 	
     it('should be review Back to notes, Twitter, GitHub icons', function () {
         menu.openAboutPage()
-        browser.sleep(3000)
         expect(aboutPage.iconTwitter.isDisplayed()).toBe(true,
 			'Icon Twitter should be displayed')
+        expect(aboutPage.backToNotes.isDisplayed()).toBe(true,
+			 'Icon Back to Notes should be displayed')
+        expect(aboutPage.iconGithub.isDisplayed()).toBe(true,
+			 'Icon GitHub should be displayed')
 	})
 })

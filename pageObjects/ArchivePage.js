@@ -17,5 +17,5 @@ class ArchivePage {
     }
 }
 
-// Экспортим объект чтобы он был доступен в других файлах
+// Export this page object to use it in all other files
 module.exports.ArchivePage = ArchivePage

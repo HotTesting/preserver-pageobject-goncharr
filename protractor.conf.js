@@ -3,7 +3,7 @@ module.exports.config = {
 
     useAllAngular2AppRoots: true,
     //specs: '*_spec.js',
-    specs: 'AboutPage_spec.js',
+    specs: 'RecycleBinPage_spec.js',
     directConnect: true,
     baseUrl: 'http://www.hiteshbalar.com/preserver/notes',
     onPrepare: function () {

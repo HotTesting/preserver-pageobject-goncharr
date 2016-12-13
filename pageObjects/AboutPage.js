@@ -5,12 +5,12 @@ class AboutPage extends BasePage {
 
     constructor() {
     	super()
-        this.backToNotes = $('li:first-child"')
+        this.backToNotes = $('li:first-child')
         this.iconTwitter = $('a[href^="https://twitter.com/Hsbalar"]')
-        this.linkToIconGithub= $('a[href^="https://github.com/hsbalar/Preserver"]')
+        this.iconGithub = $('a[href^="https://github.com/hsbalar/Preserver"]')
     }
 
 }
 
-// Экспортим объект чтобы он был доступен в других файлах
+// Export this page object to use it in all other files
 module.exports.AboutPage = AboutPage

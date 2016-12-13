@@ -9,9 +9,11 @@ describe('Recycle bin function', function () {
     let recycleBinPage = new RecycleBinPage()
 
     
-    it('should be created when title and body provided', function () {
+    it('should be deleted note ', function () {
         browser.get(URL)
         notesPage.createNote('Test', 'Test')
+        recycleBinPage.deleteNoteButton()
+        recycleBinPage.menu.openRecyleBinNotesPage()
         expect(notesPage.getNotes().count()).toBe(1,
             'Notes count should be 1 after created')
     })
