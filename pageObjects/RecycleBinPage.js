@@ -14,6 +14,7 @@ class RecycleBinPage extends NotesPage {
         this.iconDeleteNote = $('.btn-raised[title="Delete"]')
         this.iconDeleteRecycleBin = $('.btn-raised[title="Delete forever"]')
         this.delFromRecycleBin = $('[data-dismiss="modal"].btn-default')
+        
     }
 
     pushRestore() {
@@ -25,8 +26,8 @@ class RecycleBinPage extends NotesPage {
 
     //Delete note forever
     confirDelete () {
-        this.delFromRecycleBin.click()
-         browser.wait(EC.elementToBeClickable(this.notificationSuccess), 5000,
+        this.confrButtonDelete.click()
+         browser.wait(EC.elementToBeClickable(this.confrButtonDelete), 5000,
             'Delete button inside the modal window should be clickable')
     }
 
@@ -50,7 +51,7 @@ class RecycleBinPage extends NotesPage {
             browser.wait(EC.presenceOf(this.notificationSuccess), 5000,
             'Success notification should be visible after note delete')
         } else if (status === 'forever') {
-            browser.wait(EC.presenceOf(this.iconDeleteRecycleBin), 5000,
+            browser.wait(EC.elementToBeClickable(this.iconDeleteRecycleBin), 5000,
             'Should be call modal window')
         }
     }

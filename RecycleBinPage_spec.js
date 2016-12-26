@@ -30,10 +30,10 @@ describe('Recycle bin function', function () {
         //    'Notes count should be 0')
         menu.openRecyleBinNotesPage()
         recycleBinPage.deleteNote('forever', 'recycleBinPage')
-        browser.pause()
+        //browser.pause()
         recycleBinPage.confirDelete()
         expect(recycleBinPage.getNotes().count()).toBe(0,
-            'Notes count should be 1 after deleted')
+            'Notes count should be 0 after deleted')
        
     })
 
