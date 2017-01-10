@@ -10,7 +10,7 @@ class RecycleBinPage extends NotesPage {
     constructor() {
         super()
         this.restoreNote = $('.btn-raised[title="Restore"]')
-        this.confrButtonDelete = $('.grid-container [title~=Delete]')
+        this.confrButtonDelete = $('[data-dismiss="modal"].btn-primary')
         this.iconDeleteNote = $('.btn-raised[title="Delete"]')
         this.iconDeleteRecycleBin = $('.btn-raised[title="Delete forever"]')
         this.delFromRecycleBin = $('[data-dismiss="modal"].btn-default')
@@ -26,9 +26,10 @@ class RecycleBinPage extends NotesPage {
 
     //Delete note forever
     confirDelete () {
-        this.confrButtonDelete.click()
+        
          browser.wait(EC.elementToBeClickable(this.confrButtonDelete), 5000,
             'Delete button inside the modal window should be clickable')
+         this.confrButtonDelete.click()
     }
 
     getDeleteBtn (pageName){

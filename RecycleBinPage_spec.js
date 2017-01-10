@@ -31,6 +31,7 @@ describe('Recycle bin function', function () {
         menu.openRecyleBinNotesPage()
         recycleBinPage.deleteNote('forever', 'recycleBinPage')
         //browser.pause()
+        browser.sleep(5000)
         recycleBinPage.confirDelete()
         expect(recycleBinPage.getNotes().count()).toBe(0,
             'Notes count should be 0 after deleted')
